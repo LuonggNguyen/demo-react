@@ -40,12 +40,14 @@ const RandomNumberGame = () => {
 
 
     function generateRandomNumbers(length: number) {
-        setHiddenNumbers([])
-        setCurrentNumber(0);
-        setTextButton("Restart");
-        setStatus("LET'S PLAY");
-        reset()
-        start()
+        if (length > 0) {
+            setHiddenNumbers([])
+            setCurrentNumber(0);
+            setTextButton("Restart");
+            setStatus("LET'S PLAY");
+            reset()
+            start()
+        }
         return Array.from({ length: length }, (_, i) => {
             return {
                 num: i + 1,
